@@ -1,8 +1,8 @@
-{% extends 'index.html' %}
+{% extends 'base.html' %}
 
 {% block tittle %} {{meal.name}} {% endblock %}
 
-{% block content %}
+{% block body %}
     {% if meal %}
         <p><b>Блюдо: </b> {{meal.name}}</p>
         <p><b>Описание: </b> {{meal.description}}</p>

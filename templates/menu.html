@@ -1,8 +1,8 @@
-{% extends 'index.html' %}
+{% extends 'base.html' %}
 
 {% block tittle %} Меню {% endblock %}
 
-{% block content %}
+{% block body %}
     {% if meal_categories %}
         {% for category in meal_categories %}
             <h2><a href="{% url 'cafe_core_app:meal_category' category.0 %}">{{category.0}}</a></h2>
