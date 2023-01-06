@@ -1,10 +1,11 @@
-from django.shortcuts import render
 from rest_framework.views import APIView
 from .serializers import UserSerializer
 from rest_framework.response import Response
 from .models import User
 from rest_framework.exceptions import AuthenticationFailed
 import jwt, datetime
+
+
 class RegisterView(APIView):
     def post(self, request):
         serializer = UserSerializer(data=request.data)
@@ -61,3 +62,4 @@ class Logout(APIView):
             'massage': 'Успешно'
         }
         return response
+

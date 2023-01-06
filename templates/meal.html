@@ -1,13 +1,19 @@
 {% extends 'base.html' %}
 
 {% block tittle %} {{meal.name}} {% endblock %}
-
+{% load static %}
 {% block body %}
+{% csrf_token %}
     {% if meal %}
-        <p><b>Блюдо: </b> {{meal.name}}</p>
+<div class="h-100 p-5 text-white bg-dark rounded-3">
+        <h2><b>Блюдо: </b> {{meal.name}}</h2>
         <p><b>Описание: </b> {{meal.description}}</p>
         <p><b>Цена: </b> {{meal.price}} BYN</p>
         <p><b>Размер: </b> {{meal.size}} г.</p>
+    {% for i in img  %}
+         <img src=" /{{ i.image }} " width="300" height="300" alt="{{meal.name}}">
+    {% endfor %}
+    </div>
     {% else %}
         Блюдо пустое :(
     {% endif %}

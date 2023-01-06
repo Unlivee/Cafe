@@ -20,3 +20,10 @@ class Meal(models.Model):
 class MealClick(models.Model):
     meal = models.ForeignKey(Meal, on_delete=models.DO_NOTHING)
     click_date = models.DateTimeField('Дата клика')
+
+class Users(models.Model):
+    name = models.CharField('Name', max_length=100)
+
+class Gallery(models.Model):
+    image = models.ImageField(upload_to='static/img')
+    meal = models.ForeignKey(Meal, on_delete=models.CASCADE, related_name='images')

@@ -5,7 +5,15 @@
 {% block body %}
     {% if meal_categories %}
         {% for category in meal_categories %}
-            <h2><a href="{% url 'cafe_core_app:meal_category' category.0 %}">{{category.0}}</a></h2>
+<div class="h-100 p-5 text-white bg-dark rounded-3">
+          <style type="text/css">
+   A {
+    text-decoration: none; /* Убирает подчеркивание для ссылок */
+   }
+  </style>
+            <h2><a href="{% url 'cafe_core_app:meal_category' category.0 %}" class="link-light">{{category.0}}</a></h2>
+
+        </div><br>
         {% endfor %}
     {% else %}
         Нету даже категорий блюд
